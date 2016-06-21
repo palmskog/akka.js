@@ -1,6 +1,8 @@
-![Akka.Js](https://github.com/unicredit/akka.js/blob/merge-js/logo/akkajs.png)
+![Akka.Js](https://raw.githubusercontent.com/unicredit/akka.js/merge-js/logo/akkajs.png)
 
 [![Scala.js](https://www.scala-js.org/assets/badges/scalajs-0.6.8.svg)](https://www.scala-js.org)
+
+[![Join the chat at https://gitter.im/unicredit/akka.js](https://badges.gitter.im/unicredit/akka.js.svg)](https://gitter.im/unicredit/akka.js?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 This repository is an ongoing effort to port Akka to the JavaScript runtime, thanks to [Scala.js](http://scala-js.org)
 
@@ -13,7 +15,7 @@ cd akka.js
 git submodule init
 git submodule update
 sbt akkaActorJSIrPatches/compile
-sbt akkaActorJS/publishLocal
+sbt akkaJsActorJS/publishLocal
 ```
 
 ## Use it
@@ -23,7 +25,7 @@ Then add to your JS project configuration:
 ```scala
 resolvers += Resolver.sonatypeRepo("snapshots")
 
-libraryDependencies += "akka.js" %%% "akkaactor" % "0.1.1-SNAPSHOT"
+libraryDependencies += "eu.unicredit" %%% "akkajsactor" % "0.1.1-SNAPSHOT"
 ```
 
 At this point you can use most of the Akka core Api.
@@ -67,6 +69,9 @@ scheduler {
 val system = ActorSystem("akkajsapp", config)
 ```
 You now can use Akka as described in the official [docs](http://doc.akka.io/docs/akka/snapshot/scala.html).
+
+More examples are contained into the @andreaTP session at Scala Days 2016:
+[slides](https://github.com/andreaTP/sd2016.git)
 
 Please consider that only akka-core is available and on Javascript VM you are in a limited environment.
 
